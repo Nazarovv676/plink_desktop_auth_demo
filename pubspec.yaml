@@ -11,10 +11,18 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flutter_localizations:
+    sdk: flutter
+
   cupertino_icons: ^1.0.2
 
   # core
   flutter_bloc: ^7.3.1
+  bitsdojo_window: ^0.1.1+1
+  desktop_window: ^0.4.0
+
+  # ui
+  google_fonts: ^2.1.0
 
 dev_dependencies:
   flutter_test:
@@ -23,6 +31,7 @@ dev_dependencies:
   flutter_lints: ^1.0.0
 
 flutter:
-
   uses-material-design: true
 
+  assets:
+    - assets/icons/
