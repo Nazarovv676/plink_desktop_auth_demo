@@ -16,12 +16,7 @@ class WindowFrame extends StatelessWidget {
     return WindowBorder(
       color: Theme.of(context).colorScheme.secondary,
       width: 1,
-      child: MediaQuery(
-        data: MediaQuery.of(context).copyWith(
-          viewInsets: EdgeInsets.only(top: ThemeProvider.appTitleHeight),
-        ),
-        child: child,
-      ),
+      child: child,
     );
   }
 
