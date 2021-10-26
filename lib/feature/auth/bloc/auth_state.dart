@@ -13,3 +13,9 @@ class QrUpdatedState extends AuthState {
   final QrData _qrData;
   QrData get qrData => _qrData;
 }
+
+class AuthentificatedState extends AuthState {
+  final String userToken;
+
+  AuthentificatedState(this.userToken);
+}

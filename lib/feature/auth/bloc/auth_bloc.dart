@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
@@ -15,6 +16,16 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       emit(QrUpdatingState());
       final qrData = await _authRepository.renewQrData();
       emit(QrUpdatedState(qrData));
+      // this is very bad
+      // refactor with stream wrapping in [_authRepository]
+      final subscription =
+          _authRepository.subscribeToAuth(qrData.slug).listen((event) {
+        if (event is String) {
+          final body = jsonDecode(event);
+          emit(AuthentificatedState(body['user_token']!));
+        }
+      });
+      await subscription.asFuture();
     });
   }
 }

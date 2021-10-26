@@ -55,6 +55,15 @@ class _AuthPageState extends State<AuthPage> {
                     if (state is QrUpdatedState) {
                       return QrImage(data: state.qrData.slug);
                     }
+                    if (state is AuthentificatedState) {
+                      return Text(
+                        'Logged in',
+                        style: Theme.of(context)
+                            .textTheme
+                            .bodyText2!
+                            .copyWith(color: Colors.black),
+                      );
+                    }
                     return Text('Unknown state $state');
                   },
                 ),
