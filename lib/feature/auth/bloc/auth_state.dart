@@ -11,5 +11,5 @@ class QrUpdatedState extends AuthState {
   QrUpdatedState(this._qrData);
 
   final QrData _qrData;
-  QrData get qtData => _qrData;
+  QrData get qrData => _qrData;
 }
