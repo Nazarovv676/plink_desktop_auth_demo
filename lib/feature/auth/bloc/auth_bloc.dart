@@ -14,6 +14,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc(this._authRepository) : super(AuthInitial()) {
     on<RenewQrAndSubscribeAuthEvent>((event, emit) async {
       emit(QrUpdatingState());
+      // add exception handler
       final qrData = await _authRepository.renewQrData();
       emit(QrUpdatedState(qrData));
       // this is very bad
