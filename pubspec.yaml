@@ -20,6 +20,14 @@ dependencies:
   flutter_bloc: ^7.3.1
   bitsdojo_window: ^0.1.1+1
   desktop_window: ^0.4.0
+  qr_flutter: ^4.0.0
+
+  # data
+  equatable: ^2.0.3
+
+  # internet
+  http: ^0.13.4
+  web_socket_channel: ^2.1.0
 
   # ui
   google_fonts: ^2.1.0

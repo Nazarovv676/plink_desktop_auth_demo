@@ -8,3 +8,5 @@ Future<void> init() async {
 }
 
 Size get _defaultWindowSize => const Size(400, 720);
+
+String get devDomain => 'desktop.plink.tech';
